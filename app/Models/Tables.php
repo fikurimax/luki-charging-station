@@ -15,6 +15,20 @@ class Tables extends Model
         return $this->belongsTo(User::class, 'user_id');
     }
 
+    public function resetTable()
+    {
+        $this->update([
+            'is_used' => false,
+            'started_at' => null,
+            'expired_at' => null,
+            'duration' => null,
+            'payment_total' => null,
+            'payment_token' => null,
+            'payment_expiration' => null,
+            'user_id' => null,
+        ]);
+    }
+
     public function getCasts()
     {
         return [

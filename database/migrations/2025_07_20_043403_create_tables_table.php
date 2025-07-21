@@ -13,6 +13,7 @@ return new class extends Migration
     {
         Schema::create('stations', function (Blueprint $table) {
             $table->id();
+            $table->string('code')->unique();
             $table->string('name');
             $table->boolean('is_used')->default(false);
             $table->dateTime('started_at')->nullable();

@@ -41,6 +41,12 @@ class TableSelection extends Component
         $this->dispatch('$refresh');
     }
 
+    public function continuePayment(int $tableID)
+    {
+        $table = Tables::find($tableID);
+        return redirect("/qr?session={$table->payment_token}");
+    }
+
     public function render()
     {
         return view('livewire.component.table-selection', [

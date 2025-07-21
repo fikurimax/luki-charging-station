@@ -15,6 +15,7 @@ class DatabaseSeeder extends Seeder
         for ($i = 1; $i <= 5; $i++) {
             Tables::query()
                 ->create([
+                    'code' => "meja{$i}",
                     'name' => "Meja {$i}"
                 ]);
         }

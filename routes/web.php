@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ApiController;
 use App\Http\Middleware\Auth as MiddlewareAuth;
 use App\Http\Middleware\AuthenticatedUsers;
 use App\Livewire\DashboardPage;
@@ -15,3 +16,5 @@ Route::middleware(MiddlewareAuth::class)->get('/logout', function () {
 })->name('logout');
 Route::middleware(MiddlewareAuth::class)->get('/dashboard', DashboardPage::class);
 Route::middleware(MiddlewareAuth::class)->get('/qr', QrPage::class);
+
+Route::get('/api/statusmeja', ApiController::class);
